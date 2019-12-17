@@ -1,2 +1,2 @@
 # Docker
-Docker self study &amp; Ref.
+self-study &amp; Ref.
