@@ -1,6 +1,6 @@
 # Docker
 
-##### install
+##### install (MacOS)
 ```sh
 brew install docker --cask
 ```
