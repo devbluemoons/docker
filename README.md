@@ -2,6 +2,13 @@
 
 ##### install (MacOS)
 ```sh
+// when already installed
+brew uninstall docker
+
+// cleaning unremoved file 
+brew cleanup
+
+// install
 brew install docker --cask
 ```
 
