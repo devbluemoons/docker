@@ -2,7 +2,7 @@
 
 ##### install
 ```sh
-brew cask install docker
+brew install docker --cask
 ```
 
 - [Docker](https://www.docker.com/)  
