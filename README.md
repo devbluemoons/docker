@@ -1,3 +1,4 @@
+
 ## install
 
 ```console
@@ -32,37 +33,42 @@ open -a Docker
 docker container run nginx
 ```
 
-`top`  :  output running process list
+`top` : output running process list
 ```console
 # top [part of Container-ID from first character]
 docker container top abc123
 ```
 
-`log`  :  output collected all log
+`log` : output collected all log
 ```console
 # log [part of Container-ID from first character]
 docker container log abc123
 ```
 
-`inspect`  :  output detail container information
+`inspect` : output detail container information
 ```console
 # inspect [part of Container-ID from first character]
 docker container inspect abc123
 ```
 
-`stats`  :  output running container state
+`stats` : output running container state
 ```console
 # stats [part of Container-ID from first character]
 docker container stats abc123
 ```
 
-`rm`  :  output running container state
+`rm` : output running container state
 ```console
 # rm [part of Container-ID from first character or all]
 docker container rm --force $(docker ps --all --quiet)
 ```
+`exec` : **execute** container that is already running
+```console
+# exec [part of Container-ID from first character or all]
+docker container exec ls /usr/local/apache2/htdocs
+```
 
-`cp`  :  copy file or directory
+`cp` : **copy** file or directory
 ```console
 # rm [part of Container-ID from first character or all]
 docker container rm --force $(docker ps --all --quiet)
@@ -173,14 +179,14 @@ docker image build --tag demo .
 
 ## common pattern 
 ```console
-# case01
-docker container run --interactive --tty [image-name]
+# case01 (interactive + tty)
+docker container run -it [image-name]
 
-# case02
-docker container run --detach --publish [host-port:container-port] [image-name]
+# case02 (detach + publish)
+docker container run -dp [host-port:container-port] [image-name]
 
-# case03
-docker container rm --force $(docker ps --all --quiet)
+# case03 (force / all + quiet)
+docker container rm -f $(docker ps -aq)
 ```
 
 ## Dockerfile
