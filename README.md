@@ -33,42 +33,42 @@ open -a Docker
 docker container run nginx
 ```
 
-`top` : output running process list
+`top`  :  output running process list
 ```console
 # top [part of Container-ID from first character]
 docker container top abc123
 ```
 
-`log` : output collected all log
+`log`  :  output collected all log
 ```console
 # log [part of Container-ID from first character]
 docker container log abc123
 ```
 
-`inspect` : output detail container information
+`inspect`  :  output detail container information
 ```console
 # inspect [part of Container-ID from first character]
 docker container inspect abc123
 ```
 
-`stats` : output running container state
+`stats`  :  output running container state
 ```console
 # stats [part of Container-ID from first character]
 docker container stats abc123
 ```
 
-`rm` : output running container state
+`rm`  :  output running container state
 ```console
 # rm [part of Container-ID from first character or all]
 docker container rm --force $(docker ps --all --quiet)
 ```
-`exec` : **execute** container that is already running
+`exec`  :  execute container that is already running
 ```console
 # exec [part of Container-ID from first character or all]
 docker container exec ls /usr/local/apache2/htdocs
 ```
 
-`cp` : **copy** file or directory
+`cp`  :  copy file or directory
 ```console
 # rm [part of Container-ID from first character or all]
 docker container rm --force $(docker ps --all --quiet)
@@ -167,12 +167,12 @@ docker container --quiet
 docker container run --name demo abc123
 ```
 
-`--env`  :  set environment variable
+`--env | -e`  :  set environment variable
 ```console
 docker container run --env NAME=demo
 ```
 
-`--tag`  :  set build image name
+`--tag | -t`  :  set build image name
 ```console
 docker image build --tag demo .
 ```
@@ -193,8 +193,11 @@ docker container rm -f $(docker ps -aq)
 - script for application packaging
 
 ```dockerfile
-# set image-name
-FROM havi-apps
+# set image-name & alias
+FROM havi-apps AS demo
+
+# execute command while building container and save a result to image layer
+RUN echo "test" > /test.txt
 
 # work directory
 WORKDIR /dev
