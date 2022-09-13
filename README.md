@@ -216,6 +216,9 @@ ENV DESCRIPTION="programming language" \
     SUPPORT="google" \
     NAME="go"
 
+# 
+VOLUME <target-directory>
+
 # copy file or directory to container image
 COPY main.go .
 ```
