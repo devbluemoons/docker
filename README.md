@@ -62,7 +62,7 @@ docker container stats abc123
 # rm <part of Container-ID from first character or all>
 docker container rm --force $(docker ps --all --quiet)
 ```
-`exec` : execute container that is already running
+`exec` : execute command to container that is already running
 ```console
 # exec <part of Container-ID from first character or all>
 docker container exec ls /usr/local/apache2/htdocs
